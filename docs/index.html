@@ -51,18 +51,18 @@
 					function(hook, vm) {
 						hook.beforeEach(function(html) {
 							var url
-							if(/githubusercontent\.com/.test(vm.route.path + ".md")) {
-								url = vm.route.file
-									.replace('raw.githubusercontent.com', 'github.com')
-									.replace(/\/master/, '/blob/master/dev-website-docs')
-							} else {
+//							if(/githubusercontent\.com/.test(vm.route.path + ".md")) {
+//								url = vm.route.file
+//									.replace('raw.githubusercontent.com', 'github.com')
+//									.replace(/\/master/, '/blob/master/dev-website-docs')
+//							} else {
 								if(vm.route.path.indexOf("/docs-") > -1 && vm.route.path.substr(-1, 1) == "/") {
 									vm.route.path = vm.route.path + "README";
 								} else if(vm.route.path == "/") {
 									vm.route.path = vm.route.path + "docs-en/README";
 								}
-								url = 'https://github.com/kyp82nlf/myDocs/tree/master/docs' + vm.route.path + ".md"
-							}
+								url = 'https://github.com/kyp82nlf/myBlogs/tree/master/docs' + vm.route.path + ".md"
+//							}
 							var editHtml = [
 								'<p style="text-align:right;position: absolute;top: 10px;right: 5px;">',
 								'<a href="' + url + '" target="_blank">',
@@ -84,8 +84,8 @@
 		<!--<script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>-->
 		<script type="text/javascript">
 			window.onload = function() {
-				if(window.location.href.indexOf('https://kyp82nlf.github.io/myDocs') > -1) {
-					window.location.href = 'https://kyp82nlf.github.io/myDocs/#/docs-en/';
+				if(window.location.href.indexOf('https://kyp82nlf.github.io/myBlogs') > -1) {
+					window.location.href = 'https://kyp82nlf.github.io/myBlogs/#/docs-en/';
 					return;
 				}
 				if(window.location.hash == "#/") {
